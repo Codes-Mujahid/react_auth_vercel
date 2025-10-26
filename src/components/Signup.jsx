@@ -10,7 +10,7 @@ const Signup = () => {
     e.preventDefault()
     localStorage.setItem('user', JSON.stringify(formData))
     
-    console.log(formData);
+    console.log(formData); 
     setFormData({name:'', email:'', password:''})
     navigate('/login')
     toast.success('Signup successfull')
@@ -21,9 +21,9 @@ const Signup = () => {
     ));
   }
   return (
-    <div className='flex flex-col items-center' onSubmit={handleSubmit}>
+    <div className='flex flex-col items-center' >
         <h1 className='text-white text-xl md:text-2xl font-medium'>Signup Form</h1>
-        <form action="" className='mt-8 flex flex-col gap-4 items-center'>
+        <form onSubmit={handleSubmit} action="" className='mt-8 flex flex-col gap-4 items-center'>
             <Input text={'Enter Name'} type={'text'} name={'name'} value={formData.name} onChange={handleChange}/>
             <Input text={'Enter Email'} type={'email'} name={'email'} value={formData.email} onChange={handleChange}/>
             <Input text={'Password'} type={'password'} name={'password'} value={formData.password} onChange={handleChange}/>
